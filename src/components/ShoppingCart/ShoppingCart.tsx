@@ -3,11 +3,15 @@ import { Link } from "react-router-dom";
 import { IShoopingcartProp } from "../../types";
 import ProductInShoppingcart from "../ProductInShoppingCart/ProductInShoppingCart";
 
-const ShoppingCart = ({ shoppingCart }: IShoopingcartProp) => {
+const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 	return (
 		<div className="App">
 			{shoppingCart.map((productInCart) => (
-				<ProductInShoppingcart productInCart={productInCart} />
+				<ProductInShoppingcart
+					productInCart={productInCart}
+					setShoppingCart={setShoppingCart}
+					key={productInCart.shoppingCardId}
+				/>
 			))}
 			<p>
 				total price: {shoppingCart.reduce((prev, curr) => prev + curr.price, 0)}

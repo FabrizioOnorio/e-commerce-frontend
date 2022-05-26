@@ -6,6 +6,7 @@ export interface Product {
 	quantity: number;
 	price: number;
 	category: string;
+	shoppingCardId?: string;
 }
 
 export interface ICategoriesPageprops {
@@ -27,8 +28,10 @@ export interface IproductPageProps {
 
 export interface IShoopingcartProp {
 	shoppingCart: Product[];
+	setShoppingCart: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
 export interface IProductInShoppingcartProps {
 	productInCart: Product;
+	setShoppingCart: React.Dispatch<React.SetStateAction<Product[]>>;
 }

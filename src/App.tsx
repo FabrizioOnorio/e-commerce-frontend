@@ -39,7 +39,12 @@ function App() {
 				/>
 				<Route
 					path="/shoppingCart"
-					element={<ShoppingCart shoppingCart={shoppingCart} />}
+					element={
+						<ShoppingCart
+							shoppingCart={shoppingCart}
+							setShoppingCart={setShoppingCart}
+						/>
+					}
 				/>
 				<Route path="/pay" element={<Pay />} />
 			</Routes>

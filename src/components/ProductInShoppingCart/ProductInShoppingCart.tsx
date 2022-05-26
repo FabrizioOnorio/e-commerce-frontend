@@ -4,12 +4,22 @@ import { IProductInShoppingcartProps } from "../../types";
 
 const ProductInShoppingcart = ({
 	productInCart,
+	setShoppingCart,
 }: IProductInShoppingcartProps) => {
+	const handleClick = () => {
+		setShoppingCart((prevState) =>
+			prevState.filter(
+				(item) => item.shoppingCardId !== productInCart.shoppingCardId
+			)
+		);
+	};
 	return (
 		<div className="App">
-			<h3>{productInCart.name}</h3>
+			<Link to={`/products/${productInCart.id}`}>
+				<h3>{productInCart.name}</h3>
+			</Link>
 			<p>{productInCart.price} nok</p>
-			<Link to={`/products/${productInCart.id}`}>Check the product out</Link>
+			<button onClick={handleClick}>Remove item</button>
 		</div>
 	);
 };

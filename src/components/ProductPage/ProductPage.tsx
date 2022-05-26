@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IproductPageProps } from "../../types";
 import { useParams } from "react-router-dom";
 import { Product } from "../../types";
+import { v4 as uuid } from "uuid";
 
 const ProductPage = ({ products, setShoppingCart }: IproductPageProps) => {
 	let { productId } = useParams();
@@ -15,6 +16,7 @@ const ProductPage = ({ products, setShoppingCart }: IproductPageProps) => {
 
 	const handleClick = () => {
 		if (selectedProduct !== undefined) {
+			selectedProduct.shoppingCardId = uuid();
 			setShoppingCart((prevState) => [...prevState, selectedProduct]);
 		}
 	};
