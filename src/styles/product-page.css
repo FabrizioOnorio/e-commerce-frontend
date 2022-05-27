@@ -1,0 +1,25 @@
+.product--page {
+	padding-top: 8rem;
+}
+
+.product--page--details {
+	display: flex;
+	gap: 2rem;
+	padding: 2rem 4rem;
+}
+
+.product--page--text h1 {
+  font-size: xx-large;
+  margin-top: 0;
+}
+
+.product--page--text p {
+  color: rgb(119,119,119);
+}
+
+.buy--button {
+  color: white;
+  border: none;
+  background-color: rgb(17, 17, 17);
+  padding: 1rem;
+}

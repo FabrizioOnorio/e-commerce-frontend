@@ -17,19 +17,33 @@ const ProductPage = ({ products, setShoppingCart }: IproductPageProps) => {
 	const handleClick = () => {
 		if (selectedProduct !== undefined) {
 			selectedProduct.shoppingCardId = uuid();
-      setShoppingCart((prevState) => [...prevState, selectedProduct]);
+			setShoppingCart((prevState) => [...prevState, selectedProduct]);
 		}
 	};
 
 	return (
-		<div className="App">
-			<h1>{selectedProduct?.name}</h1>
-			<img src={selectedProduct?.image} alt={selectedProduct?.name} />
-			<p>{selectedProduct?.description}</p>
-			<p>Quantity available: {selectedProduct?.quantity}</p>
-			<p>price: {selectedProduct?.price} nok</p>
-			<p>Category: {selectedProduct?.category}</p>
-			<button onClick={handleClick}>Buy</button>
+		<div className="product--page">
+			<section className="categories--path">
+				HOME {" > "} {selectedProduct?.name}
+			</section>
+			<section className="product--page--details">
+				<div className="product--page--img">
+					<img src={selectedProduct?.image} alt={selectedProduct?.name} />
+				</div>
+				<div className="product--page--text">
+					<h1>{selectedProduct?.name}</h1>
+					<h2>NOK {selectedProduct?.price}</h2>
+					<p>{selectedProduct?.description}</p>
+					<p>
+						AVAILABILITY:{" "}
+						{selectedProduct?.quantity !== undefined &&
+						selectedProduct.quantity > 0
+							? "IN STOCK"
+							: "OUT OF STOCK"}
+					</p>
+					<button className="buy--button" onClick={handleClick}>ADD TO CART</button>
+				</div>
+			</section>
 		</div>
 	);
 };

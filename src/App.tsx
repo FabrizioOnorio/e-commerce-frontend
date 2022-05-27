@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import CategoriesPage from "./components/CategoriesPage/CategoriesPage";
 import ProductPage from "./components/ProductPage/ProductPage";
@@ -52,6 +53,7 @@ function App() {
 				/>
 				<Route path="/pay" element={<Pay />} />
 			</Routes>
+      <Footer />
 		</div>
 	);
 }
