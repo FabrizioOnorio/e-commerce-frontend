@@ -1,16 +1,26 @@
 import React from "react";
 import {  Link } from "react-router-dom";
+import { BiShoppingBag } from "react-icons/bi";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 
 const Nav = () => {
 	return (
-		<div className="navbar">
-			<Link to="/">HOME</Link>
-			<Link to="/categories">
-				CATEGORIES
+		<>
+			<Link to="/" className="navbar--logo">
+				PORTO
 			</Link>
-			<Link to="/shoppingCart">BASKET</Link>
-		</div>
+			<div className="navbar">
+				<Link to="/">HOME</Link>
+				<Link to="/categories">
+					CATEGORIES <MdKeyboardArrowDown />
+				</Link>
+				<Link className="navbar--basket" to="/shoppingCart">
+					<BiShoppingBag />
+					<MdKeyboardArrowDown />
+				</Link>
+			</div>
+		</>
 	);
 }
 

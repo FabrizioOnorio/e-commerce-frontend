@@ -11,10 +11,25 @@
 	width: 100%;
 	z-index: 1;
 	font-family: "Maven Pro", sans-serif;
-   cursor: pointer;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+}
+
+.navbar--logo {
+	color: rgb(255, 255, 255);
+	z-index: 2;
+  position: fixed;
+  top: 0;
+  margin-left: 1.5rem;
+  font-size: 2em;
+  margin-top: 2rem;
 }
 
 .navbar a {
 	color: rgb(255, 255, 255);
 	margin-right: 1.5rem;
+}
+
+.navbar--basket {
+	font-size: xx-large;
 }
