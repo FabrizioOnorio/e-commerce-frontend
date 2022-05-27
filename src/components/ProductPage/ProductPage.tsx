@@ -17,7 +17,7 @@ const ProductPage = ({ products, setShoppingCart }: IproductPageProps) => {
 	const handleClick = () => {
 		if (selectedProduct !== undefined) {
 			selectedProduct.shoppingCardId = uuid();
-			setShoppingCart((prevState) => [...prevState, selectedProduct]);
+      setShoppingCart((prevState) => [...prevState, selectedProduct]);
 		}
 	};
 

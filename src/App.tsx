@@ -7,17 +7,22 @@ import ProductPage from "./components/ProductPage/ProductPage";
 import { productsDB } from "./products";
 import { Product } from "./types";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
-import Pay from "./components/Pay/Pay";
+import Pay from "./components/PayPage/PayPage";
 
 function App() {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [shoppingCart, setShoppingCart] = useState<Product[]>([]);
 	useEffect(() => {
 		const getProducts = async () => {
-			setProducts(productsDB);
+			fetch("http://localhost:8000/api/products")
+				.then((response) => response.json())
+				.then((response) => {
+					console.log(response);
+					setProducts(response);
+				});
 		};
 		getProducts();
-	});
+	}, []);
 
 	return (
 		<div className="App">

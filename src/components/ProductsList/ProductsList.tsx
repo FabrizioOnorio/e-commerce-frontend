@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "../Productcard/Productcard";
 import { IProductListProps } from "../../types"
 
-const ProductList = ({ products }: IProductListProps) => {
+const ProductsList = ({ products }: IProductListProps) => {
 	return (
 		<div className="App">
 			<h1>List of products</h1>
@@ -15,4 +15,4 @@ const ProductList = ({ products }: IProductListProps) => {
 	);
 };
 
-export default ProductList;
+export default ProductsList;

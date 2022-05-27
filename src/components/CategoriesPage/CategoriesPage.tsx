@@ -1,12 +1,16 @@
 import React from "react";
-import ProductList from "../../components/ProductsList/ProductList";
-import { ICategoriesPageprops } from "../../types"
+import ProductsList from "../ProductsList/ProductsList";
+import { ICategoriesPageprops } from "../../types";
 
 const CategoriesPage = ({ products }: ICategoriesPageprops) => {
 	return (
-		<div className="App">
-			<h1> different categories</h1>
-			<ProductList products={products} />
+		<div className="categories">
+			<section className="categories--adds">
+				<img src="/images/bike-add.png" alt="bike on sales" />
+				<img src="/images/sales-add.png" alt="sales banner" />
+			</section>
+			<section>HOME {" > "} ALL</section>
+			<ProductsList products={products} />
 		</div>
 	);
 };
