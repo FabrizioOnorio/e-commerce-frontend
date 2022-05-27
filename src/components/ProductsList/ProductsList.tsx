@@ -1,16 +1,13 @@
 import React from "react";
 import ProductCard from "../Productcard/Productcard";
-import { IProductListProps } from "../../types"
+import { IProductsListProps } from "../../types";
 
-const ProductsList = ({ products }: IProductListProps) => {
+const ProductsList = ({ selectedCategory }: IProductsListProps) => {
 	return (
-		<div className="App">
-			<h1>List of products</h1>
-			<div>
-				{products.map((product) => (
-					<ProductCard key={product.id} product={product} />
-				))}
-			</div>
+		<div className="products--list">
+			{selectedCategory.map((product) => (
+				<ProductCard key={product.id} product={product} />
+			))}
 		</div>
 	);
 };

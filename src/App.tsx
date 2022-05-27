@@ -4,7 +4,6 @@ import Nav from "./components/Nav/Nav";
 import Home from "./components/Home/Home";
 import CategoriesPage from "./components/CategoriesPage/CategoriesPage";
 import ProductPage from "./components/ProductPage/ProductPage";
-import { productsDB } from "./products";
 import { Product } from "./types";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import Pay from "./components/PayPage/PayPage";

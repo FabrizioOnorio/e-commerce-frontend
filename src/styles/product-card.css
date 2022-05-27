@@ -1,0 +1,18 @@
+.product--card {
+	max-width: 10rem;
+	font-family: "Poppins", sans-serif;
+	font-size: 1rem;
+}
+
+.product--card h3 {
+	margin: 0;
+}
+
+.product--card a {
+	color: rgb(68, 68, 68);
+}
+.product--card img {
+	max-width: 12rem;
+	height: 13rem;
+	background-image: white;
+}

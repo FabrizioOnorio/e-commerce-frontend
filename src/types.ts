@@ -13,8 +13,8 @@ export interface ICategoriesPageprops {
 	products: Product[];
 }
 
-export interface IProductListProps {
-	products: Product[];
+export interface IProductsListProps {
+	selectedCategory: Product[];
 }
 
 export interface IProductCardProps {
