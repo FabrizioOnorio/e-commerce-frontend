@@ -14,12 +14,21 @@ const ProductInShoppingcart = ({
 		);
 	};
 	return (
-		<div className="App">
-			<Link to={`/products/${productInCart.id}`}>
-				<h3>{productInCart.name}</h3>
-			</Link>
-			<p>{productInCart.price} nok</p>
-			<button onClick={handleClick}>Remove item</button>
+		<div className="product--in--cart">
+			<img
+				className="product--in--cart--img"
+				src={productInCart.image}
+				alt={productInCart.name}
+			/>
+			<section>
+				<Link to={`/products/${productInCart.id}`}>
+					<h3>{productInCart.name}</h3>
+				</Link>
+				<p>NOK {productInCart.price}</p>
+				<button className="product--in--cart--button" onClick={handleClick}>
+					Remove item
+				</button>
+			</section>
 		</div>
 	);
 };

@@ -5,31 +5,34 @@ import { Product } from "../../types";
 
 const CategoriesPage = ({ products }: ICategoriesPageprops) => {
 	const [selectedCategory, setSelectedCategory] = useState<Product[]>([]);
-
+	const [pathCategory, setPathCategory] = useState("ALL");
 	useEffect(() => {
 		setSelectedCategory(products);
 	}, [products]);
 
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
 		const element = e.currentTarget as HTMLInputElement;
-		const selectedCategory = element.value;
-		if (selectedCategory === "all") {
+		const category = element.value;
+		if (category === "all") {
 			setSelectedCategory(products);
 		}
-		if (selectedCategory === "woman") {
+		if (category === "woman") {
 			setSelectedCategory(
 				products.filter((product) => product.category === "1")
 			);
+			setPathCategory("WOMAN");
 		}
-		if (selectedCategory === "mens") {
+		if (category === "mens") {
 			setSelectedCategory(
 				products.filter((product) => product.category === "2")
 			);
+			setPathCategory("MENS");
 		}
-		if (selectedCategory === "kids") {
+		if (category === "kids") {
 			setSelectedCategory(
 				products.filter((product) => product.category === "3")
 			);
+			setPathCategory("KIDS");
 		}
 	};
 
@@ -39,7 +42,10 @@ const CategoriesPage = ({ products }: ICategoriesPageprops) => {
 				<img src="/images/bike-add.png" alt="bike on sales" />
 				<img src="/images/sales-add.png" alt="sales banner" />
 			</section>
-			<section className="categories--path">HOME {" > "} ALL</section>
+			<section className="categories--path">
+				HOME  {" > "}
+				{pathCategory}
+			</section>
 			<div className="categories--products">
 				<section className="categories--sidebar">
 					<ul className="categories--sidebar--ul">

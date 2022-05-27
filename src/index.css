@@ -5,12 +5,15 @@
 @import "./styles/footer.css";
 @import "./styles/product-page.css";
 @import "./styles/homepage.css";
+@import "./styles/shopping-cart.css";
+@import "./styles/product-in-cart.css";
+@import "./styles/paypage.css";
 
 body {
 	margin: 0;
 	padding: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: rgb(244,244,244);
+	font-family: "Poppins", sans-serif;
+	background-color: rgb(244, 244, 244);
 }
 
 a {

@@ -1,0 +1,21 @@
+.product--in--cart {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product--in--cart a h3 {
+  color: rgb(17, 17, 17);
+  margin-top: 0;
+}
+
+.product--in--cart--button {
+  border: none;
+  background-color: rgb(17, 17, 17);
+  color: rgb(255, 255, 255);
+  padding: 0.5rem;
+}
+
+.product--in--cart--img {
+  max-width: 150px;
+}
