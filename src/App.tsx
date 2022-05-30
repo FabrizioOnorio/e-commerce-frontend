@@ -9,14 +9,19 @@ import { Product } from "./types";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import Pay from "./components/PayPage/PayPage";
 
+const BEAddress =
+	process.env.NODE_ENV === "development"
+		? "http://localhost:8000"
+		: "https://e-commerce-backend-fabrizio.herokuapp.com";
+
 function App() {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [shoppingCart, setShoppingCart] = useState<Product[]>([]);
-  const [isActive, setIsActive] = useState(false);
+	const [isActive, setIsActive] = useState(false);
 
 	useEffect(() => {
 		const getProducts = async () => {
-			fetch("http://localhost:8000/api/products")
+			fetch(`${BEAddress}/api/products`)
 				.then((response) => response.json())
 				.then((response) => {
 					setProducts(response);

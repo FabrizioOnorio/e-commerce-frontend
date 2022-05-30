@@ -1,7 +1,12 @@
 import React from "react";
-import { Link, Router, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IShoopingcartProp } from "../../types";
 import ProductInShoppingcart from "../ProductInShoppingCart/ProductInShoppingCart";
+
+const BEAddress =
+	process.env.NODE_ENV === "development"
+		? "http://localhost:8000"
+		: "https://e-commerce-backend-fabrizio.herokuapp.com";
 
 const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 	const navigate = useNavigate();
@@ -16,7 +21,7 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 					body: JSON.stringify({ quantity: 1 }),
 				};
 				const response = await fetch(
-					`http://localhost:8000/api/products/${product.id}`,
+					`${BEAddress}/api/products/${product.id}`,
 					requestOptions
 				);
 				const data = await response.json();
