@@ -49,6 +49,6 @@
 	}
 
 	.navbar--logo {
-		display: none;
+		font-size: medium;
 	}
 }

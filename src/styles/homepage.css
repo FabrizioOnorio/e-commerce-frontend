@@ -13,6 +13,8 @@
 .homepage--shop--button {
 	background-color: rgb(255, 255, 255);
 	color: rgb(17, 17, 17);
+	display: flex;
+	align-items: center;
 	padding: 1.2rem 2.2rem;
 }
 
@@ -47,7 +49,33 @@
 
 @media (max-width: 768px) {
 	.homepage--shop--button {
-		align-items: center;
-		padding: 1rem 1rem 0 rem 1rem;
+		padding: 0 1rem 0 1rem;
+	}
+
+	.homepage--text h2 {
+		overflow-wrap: break-word;
+		font-size: medium;
+		margin-bottom: 1rem;
+	}
+
+	.homepage--text h1 {
+		overflow-wrap: break-word;
+		font-size: medium;
+		margin-bottom: 1rem;
+	}
+
+	.homepage--text--sales {
+		display: flex;
+		flex-direction: column;
+		font-size: medium;
+	}
+
+	.homepage--text h1 {
+		font-size: medium;
+	}
+
+	.homepage--shop--button {
+		align-content: left;
+		padding: 1rem;
 	}
 }
