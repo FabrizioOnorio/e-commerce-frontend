@@ -1,40 +1,51 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Router, useNavigate } from "react-router-dom";
 import { IShoopingcartProp } from "../../types";
 import ProductInShoppingcart from "../ProductInShoppingCart/ProductInShoppingCart";
 
 const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
-	const handleClick = () => {
-		shoppingCart.forEach(async (product) => {
-			const requestOptions = {
-				method: "PUT",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ quantity: 1 }),
-			};
-			const response = await fetch(
-				`http://localhost:8000/api/products/${product.id}`,
-				requestOptions
-			);
-			await response.json();
-		});
-		setShoppingCart((prev) => []);
+	const navigate = useNavigate();
+
+	const handleClick = async () => {
+		let hasAllProducts = true;
+		await Promise.all(
+			shoppingCart.map(async (product) => {
+				const requestOptions = {
+					method: "PUT",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ quantity: 1 }),
+				};
+				const response = await fetch(
+					`http://localhost:8000/api/products/${product.id}`,
+					requestOptions
+				);
+				const data = await response.json();
+				if (data.message) {
+					alert(data.message);
+					hasAllProducts = false;
+				} else {
+					navigate("/pay");
+				}
+			})
+		);
+
+		hasAllProducts && setShoppingCart((prev) => []);
 	};
 	return (
 		<div className="shopping--cart--page">
 			<div className="shopping--cart">
 				<div className="shopping--cart--header">
 					<h3>Order Summary</h3>
-					<Link
+					<p
 						onClick={handleClick}
 						className={
 							shoppingCart.length > 0
 								? "shopping--cart--pay"
 								: "shopping--cart--pay--hide"
 						}
-						to={"/pay"}
 					>
 						Pay
-					</Link>
+					</p>
 				</div>
 				<p className="shopping--cart--total">
 					total price:{" "}
