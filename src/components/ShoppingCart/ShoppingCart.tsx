@@ -4,12 +4,15 @@ import { IShoopingcartProp } from "../../types";
 import ProductInShoppingcart from "../ProductInShoppingCart/ProductInShoppingCart";
 
 const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
+  const handleClick = () =>{
+    
+  }
 	return (
 		<div className="shopping--cart--page">
 			<div className="shopping--cart">
 				<div className="shopping--cart--header">
 					<h3>Order Summary</h3>
-					<Link className={shoppingCart.length > 0 ?"shopping--cart--pay" : "shopping--cart--pay--hide"} to={"/pay"}>
+					<Link onClick={handleClick} className={shoppingCart.length > 0 ?"shopping--cart--pay" : "shopping--cart--pay--hide"} to={"/pay"}>
 						Pay
 					</Link>
 				</div>

@@ -6,22 +6,42 @@ import { v4 as uuid } from "uuid";
 import { BiShoppingBag } from "react-icons/bi";
 import { GiConfirmed } from "react-icons/gi";
 
-const ProductPage = ({ products, setShoppingCart }: IproductPageProps) => {
+const ProductPage = ({
+	products,
+	setShoppingCart,
+	isActive,
+	setIsActive,
+}: IproductPageProps) => {
 	let { productId } = useParams();
-	const [isActive, setIsActive] = useState(false);
 	const [selectedProduct, setSelectedProduct] = useState<Product>();
 	useEffect(() => {
 		const product = products.find(
 			(product) => product.id === Number(productId)
 		);
+
+		if (product !== undefined) {
+			product.shoppingCardId = uuid();
+		}
 		setSelectedProduct(product);
 	}, [productId, products]);
 
 	const handleClick = () => {
 		if (selectedProduct !== undefined) {
-			selectedProduct.shoppingCardId = uuid();
+			setSelectedProduct((prev) => {
+				if (prev) {
+					return { ...prev, shoppingCardId: uuid() };
+				}
+			});
+			console.log(selectedProduct);
+			console.log(selectedProduct.shoppingCardId);
+			// //selectedProduct.shoppingCardId = Math.floor(
+			// 	//Math.random() * 10000
+			// ).toString();
 			setShoppingCart((prevState) => [...prevState, selectedProduct]);
-			setIsActive((current) => !current);
+			setIsActive(true);
+			setTimeout(() => {
+				setIsActive(false);
+			}, 2000);
 		}
 	};
 

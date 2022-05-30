@@ -2,8 +2,15 @@ import React, { useEffect, useState } from "react";
 import ProductsList from "../ProductsList/ProductsList";
 import { ICategoriesPageprops } from "../../types";
 import { Product } from "../../types";
+import { Link } from "react-router-dom";
+import { GiConfirmed } from "react-icons/gi";
 
-const CategoriesPage = ({ products }: ICategoriesPageprops) => {
+const CategoriesPage = ({
+	products,
+	setShoppingCart,
+	isActive,
+	setIsActive,
+}: ICategoriesPageprops) => {
 	const [selectedCategory, setSelectedCategory] = useState<Product[]>([]);
 	const [pathCategory, setPathCategory] = useState("ALL");
 	useEffect(() => {
@@ -46,6 +53,12 @@ const CategoriesPage = ({ products }: ICategoriesPageprops) => {
 				HOME  {" > "}
 				{pathCategory}
 			</section>
+			<div className={isActive ? "added--to--basket" : "add--to--basket"}>
+				<p>
+					<GiConfirmed /> You added to your{" "}
+					<Link to="/shoppingCart">shopping cart</Link>{" "}
+				</p>
+			</div>
 			<div className="categories--products">
 				<section className="categories--sidebar">
 					<ul className="categories--sidebar--ul">
@@ -87,7 +100,11 @@ const CategoriesPage = ({ products }: ICategoriesPageprops) => {
 						</li>
 					</ul>
 				</section>
-				<ProductsList selectedCategory={selectedCategory} />
+				<ProductsList
+					setShoppingCart={setShoppingCart}
+					selectedCategory={selectedCategory}
+					setIsActive={setIsActive}
+				/>
 			</div>
 		</div>
 	);

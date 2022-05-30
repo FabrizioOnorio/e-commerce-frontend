@@ -12,12 +12,13 @@ import Pay from "./components/PayPage/PayPage";
 function App() {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [shoppingCart, setShoppingCart] = useState<Product[]>([]);
+  const [isActive, setIsActive] = useState(false);
+
 	useEffect(() => {
 		const getProducts = async () => {
 			fetch("http://localhost:8000/api/products")
 				.then((response) => response.json())
 				.then((response) => {
-					console.log(response);
 					setProducts(response);
 				});
 		};
@@ -26,12 +27,19 @@ function App() {
 
 	return (
 		<div className="App">
-			<Nav />
+			<Nav shoppingCart={shoppingCart} />
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route
 					path="/categories"
-					element={<CategoriesPage products={products} />}
+					element={
+						<CategoriesPage
+							products={products}
+							setShoppingCart={setShoppingCart}
+							isActive={isActive}
+							setIsActive={setIsActive}
+						/>
+					}
 				/>
 				<Route
 					path="/products/:productId"
@@ -39,6 +47,8 @@ function App() {
 						<ProductPage
 							products={products}
 							setShoppingCart={setShoppingCart}
+							isActive={isActive}
+							setIsActive={setIsActive}
 						/>
 					}
 				/>
@@ -53,7 +63,7 @@ function App() {
 				/>
 				<Route path="/pay" element={<Pay />} />
 			</Routes>
-      <Footer />
+			<Footer />
 		</div>
 	);
 }

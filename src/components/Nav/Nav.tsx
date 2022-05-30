@@ -1,10 +1,10 @@
 import React from "react";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BiShoppingBag } from "react-icons/bi";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { INavProps } from "../../types";
 
-
-const Nav = () => {
+const Nav = ({ shoppingCart }: INavProps) => {
 	return (
 		<>
 			<Link to="/" className="navbar--logo">
@@ -17,11 +17,11 @@ const Nav = () => {
 				</Link>
 				<Link className="navbar--basket" to="/shoppingCart">
 					<BiShoppingBag />
-					<MdKeyboardArrowDown />
 				</Link>
+					<p className={shoppingCart.length > 0 ? "navbar--counter" : ""}>{shoppingCart.length > 0 ? shoppingCart.length : ""}</p>
 			</div>
 		</>
 	);
-}
+};
 
 export default Nav;

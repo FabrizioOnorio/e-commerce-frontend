@@ -18,18 +18,27 @@
 .navbar--logo {
 	color: rgb(255, 255, 255);
 	z-index: 2;
-  position: fixed;
-  top: 0;
-  margin-left: 1.5rem;
-  font-size: 2em;
-  margin-top: 2rem;
+	position: fixed;
+	top: 0;
+	margin-left: 1.5rem;
+	font-size: 2em;
+	margin-top: 2rem;
 }
 
 .navbar a {
 	color: rgb(255, 255, 255);
-	margin-right: 1.5rem;
+	margin-right: 1rem;
 }
 
 .navbar--basket {
 	font-size: xx-large;
+}
+
+.navbar--counter {
+	margin-right: 1rem;
+	background-color: rgb(210, 110, 75);
+	border-radius: 50%;
+	padding: 0.3rem 0.5rem;
+	font-size: smaller;
+	margin-left: -1.5rem;
 }
