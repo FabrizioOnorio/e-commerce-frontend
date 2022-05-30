@@ -23,7 +23,14 @@ const ProductCard = ({
 	};
 	return (
 		<div className="product--card">
-			<BiShoppingBag className="product--card--basket" onClick={handleClick} />
+			<div
+				className={product.quantity < 1 ? "product--card--basket--none" : ""}
+			>
+				<BiShoppingBag
+					className="product--card--basket"
+					onClick={handleClick}
+				/>
+			</div>
 			<Link to={`/products/${product.id}`}>
 				<img src={product.image} alt={product.name} />
 				<h3>{product.name}</h3>

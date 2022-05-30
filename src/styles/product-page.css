@@ -22,7 +22,15 @@
 	border: none;
 	background-color: rgb(17, 17, 17);
 	padding: 1rem;
-  cursor: grab;
+	cursor: pointer;
+}
+
+.buy--button--disabled {
+	color: white;
+	border: none;
+	background-color: rgba(17, 17, 17, 0.676);
+	padding: 1rem;
+	cursor: not-allowed;
 }
 
 .add--to--basket {
@@ -48,4 +56,16 @@
 
 .product--page--availability {
 	color: rgb(35, 37, 41);
+}
+
+@media (max-width: 768px) {
+	.product--page--details {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+	}
+
+	.product--page--details img {
+		max-width: 350px;
+	}
 }

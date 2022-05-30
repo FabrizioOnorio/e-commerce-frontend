@@ -1,15 +1,18 @@
 .categories {
-  padding-top: 8rem;
+	padding-top: 8rem;
 }
 
 .categories--adds {
 	display: flex;
 	justify-content: space-around;
 	height: 9.5rem;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 .categories--adds img {
 	width: 47%;
+	min-width: 300px;
 }
 
 .categories--path {
@@ -36,9 +39,16 @@
 	background-color: transparent;
 	border: none;
 	margin-bottom: 0.2rem;
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .category {
 	color: rgb(119, 119, 119);
+}
+
+@media (max-width: 768px) {
+	.categories--products {
+		display: flex;
+		flex-direction: column;
+	}
 }

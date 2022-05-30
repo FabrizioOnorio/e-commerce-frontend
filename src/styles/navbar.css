@@ -42,3 +42,13 @@
 	font-size: smaller;
 	margin-left: -1.5rem;
 }
+
+@media (max-width: 768px) {
+	.navbar {
+		font-size: small;
+	}
+
+	.navbar--logo {
+		display: none;
+	}
+}

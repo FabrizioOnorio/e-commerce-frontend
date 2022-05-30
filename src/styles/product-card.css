@@ -10,6 +10,7 @@
 .product--card a {
 	color: rgb(68, 68, 68);
 }
+
 .product--card img {
 	max-width: 12rem;
 	height: 13rem;
@@ -34,4 +35,19 @@
 
 .product--card:hover .product--card--basket {
 	display: block;
+}
+
+.product--card--basket--none {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.product--card {
+		max-width: 18rem;
+	}
+
+	.product--card img {
+		max-width: 18rem;
+		background-image: white;
+	}
 }

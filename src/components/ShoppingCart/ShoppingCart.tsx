@@ -4,15 +4,35 @@ import { IShoopingcartProp } from "../../types";
 import ProductInShoppingcart from "../ProductInShoppingCart/ProductInShoppingCart";
 
 const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
-  const handleClick = () =>{
-    
-  }
+	const handleClick = () => {
+		shoppingCart.forEach(async (product) => {
+			const requestOptions = {
+				method: "PUT",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ quantity: 1 }),
+			};
+			const response = await fetch(
+				`http://localhost:8000/api/products/${product.id}`,
+				requestOptions
+			);
+			await response.json();
+		});
+		setShoppingCart((prev) => []);
+	};
 	return (
 		<div className="shopping--cart--page">
 			<div className="shopping--cart">
 				<div className="shopping--cart--header">
 					<h3>Order Summary</h3>
-					<Link onClick={handleClick} className={shoppingCart.length > 0 ?"shopping--cart--pay" : "shopping--cart--pay--hide"} to={"/pay"}>
+					<Link
+						onClick={handleClick}
+						className={
+							shoppingCart.length > 0
+								? "shopping--cart--pay"
+								: "shopping--cart--pay--hide"
+						}
+						to={"/pay"}
+					>
 						Pay
 					</Link>
 				</div>
@@ -22,7 +42,9 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 				</p>
 				<p className="shopping--cart--count">
 					{shoppingCart.length > 0 ? shoppingCart.length : ""}{" "}
-					{shoppingCart.length > 0 ? "Item in Cart" : "No items in the cart yet."}
+					{shoppingCart.length > 0
+						? "Item in Cart"
+						: "No items in the cart yet."}
 				</p>
 				{shoppingCart.map((productInCart) => (
 					<ProductInShoppingcart

@@ -4,3 +4,9 @@
   flex-wrap: wrap;
   padding: 1rem;
 }
+
+@media (max-width: 768px) {
+	.products--list {
+		gap: 1.5rem
+	}
+}

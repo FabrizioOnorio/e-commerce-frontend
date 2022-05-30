@@ -32,11 +32,7 @@ const ProductPage = ({
 					return { ...prev, shoppingCardId: uuid() };
 				}
 			});
-			console.log(selectedProduct);
-			console.log(selectedProduct.shoppingCardId);
-			// //selectedProduct.shoppingCardId = Math.floor(
-			// 	//Math.random() * 10000
-			// ).toString();
+
 			setShoppingCart((prevState) => [...prevState, selectedProduct]);
 			setIsActive(true);
 			setTimeout(() => {
@@ -73,7 +69,21 @@ const ProductPage = ({
 								: "OUT OF STOCK"}
 						</strong>
 					</p>
-					<button className="buy--button" onClick={handleClick}>
+					<button
+						className={
+							selectedProduct?.quantity !== undefined &&
+							selectedProduct.quantity > 0
+								? "buy--button"
+								: "buy--button--disabled"
+						}
+						onClick={handleClick}
+						disabled={
+							selectedProduct?.quantity !== undefined &&
+							selectedProduct.quantity < 1
+								? true
+								: false
+						}
+					>
 						<BiShoppingBag /> ADD TO CART
 					</button>
 				</div>
