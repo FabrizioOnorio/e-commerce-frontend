@@ -41,7 +41,7 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 			<div className="shopping--cart">
 				<div className="shopping--cart--header">
 					<h3>Order Summary</h3>
-					<p
+					<button
 						onClick={handleClick}
 						className={
 							shoppingCart.length > 0
@@ -50,7 +50,7 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 						}
 					>
 						Pay
-					</p>
+					</button>
 				</div>
 				<p className="shopping--cart--total">
 					total price:{" "}

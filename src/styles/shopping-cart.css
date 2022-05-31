@@ -32,6 +32,8 @@
   background-color: rgb(17, 17, 17);
 	color: rgb(255, 255, 255);
   padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
 }
 
 .shopping--cart--pay--hide {
