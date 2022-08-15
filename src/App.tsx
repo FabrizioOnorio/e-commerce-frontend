@@ -28,7 +28,6 @@ function App() {
 				});
 		};
 		getProducts();
-    console.log(products)
 	}, []);
 	return (
 		<div className="App">
