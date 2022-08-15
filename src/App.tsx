@@ -12,7 +12,7 @@ import Pay from "./components/PayPage/PayPage";
 const BEAddress =
 	process.env.NODE_ENV === "development"
 		? "http://localhost:8000"
-		: "https://e-commerce-backend-fabrizio.herokuapp.com";
+		: "";
 
 function App() {
 	const [products, setProducts] = useState<Product[]>([]);
@@ -28,8 +28,8 @@ function App() {
 				});
 		};
 		getProducts();
+    console.log(products)
 	}, []);
-
 	return (
 		<div className="App">
 			<Nav shoppingCart={shoppingCart} />
