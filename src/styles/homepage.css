@@ -29,7 +29,7 @@
 }
 
 .homepage--text h1 {
-	font-size: 3.8em;
+	font-size: 3.8rem;
 	margin: 0 auto;
 }
 
@@ -54,28 +54,28 @@
 
 	.homepage--text h2 {
 		overflow-wrap: break-word;
-		font-size: medium;
-		margin-bottom: 1rem;
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
 	}
 
 	.homepage--text h1 {
 		overflow-wrap: break-word;
-		font-size: medium;
-		margin-bottom: 1rem;
+		font-size: 2rem;
 	}
 
 	.homepage--text--sales {
 		display: flex;
 		flex-direction: column;
-		font-size: medium;
+		font-size: 1.1rem;
 	}
 
 	.homepage--text h1 {
-		font-size: medium;
+		font-size: 2rem;
 	}
 
-	.homepage--shop--button {
+	a.homepage--shop--button {
 		align-content: left;
 		padding: 1rem;
+    margin-left: 0;
 	}
 }
