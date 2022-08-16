@@ -2,11 +2,12 @@
   display: flex;
   gap: 3.5rem;
   flex-wrap: wrap;
-  padding: 1rem;
+  margin: 1.5rem 1rem;
 }
 
 @media (max-width: 768px) {
 	.products--list {
-		gap: 1.5rem
+		gap: 1.5rem;
+    margin: 0 auto;
 	}
 }

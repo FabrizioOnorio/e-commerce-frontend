@@ -50,5 +50,9 @@
 	.categories--products {
 		display: flex;
 		flex-direction: column;
+    padding-left: 0;
 	}
+  .categories--sidebar {
+    margin: 0 0.5rem;
+  }
 }
