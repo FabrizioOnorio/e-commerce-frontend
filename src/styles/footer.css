@@ -1,4 +1,12 @@
 .footer {
   height: 10rem;
 	background-color: rgb(17, 17, 17);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer--link {
+  color: white;
 }
