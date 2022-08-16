@@ -39,3 +39,9 @@
 .shopping--cart--pay--hide {
   display: none;
 }
+
+@media (max-width: 768px) {
+	.shopping--cart {
+		margin: 0 1rem;
+	}
+}
