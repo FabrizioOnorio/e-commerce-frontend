@@ -3,11 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { IShoopingcartProp } from "../../types";
 import ProductInShoppingcart from "../ProductInShoppingCart/ProductInShoppingCart";
 
-const BEAddress =
-	process.env.NODE_ENV === "development"
-		? "http://localhost:8000"
-		: "https://e-commerce-backend-fabrizio.herokuapp.com";
-
 const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 	const navigate = useNavigate();
 
