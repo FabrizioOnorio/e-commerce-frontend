@@ -12,29 +12,8 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }: IShoopingcartProp) => {
 	const navigate = useNavigate();
 
 	const handleClick = async () => {
-		let hasAllProducts = true;
-		await Promise.all(
-			shoppingCart.map(async (product) => {
-				const requestOptions = {
-					method: "PUT",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ quantity: 1 }),
-				};
-				const response = await fetch(
-					`${BEAddress}/api/products/${product.id}`,
-					requestOptions
-				);
-				const data = await response.json();
-				if (data.message) {
-					alert(data.message);
-					hasAllProducts = false;
-				} else {
-					navigate("/pay");
-				}
-			})
-		);
-
-		hasAllProducts && setShoppingCart((prev) => []);
+		navigate("/pay");
+		setShoppingCart((prev) => []);
 	};
 	return (
 		<div className="shopping--cart--page">
