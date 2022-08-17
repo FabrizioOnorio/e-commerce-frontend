@@ -17,8 +17,8 @@ const Nav = ({ shoppingCart }: INavProps) => {
 				</Link>
 				<Link className="navbar--basket" to="/shoppingCart">
 					<BiShoppingBag />
-				</Link>
 					<p className={shoppingCart.length > 0 ? "navbar--counter" : ""}>{shoppingCart.length > 0 ? shoppingCart.length : ""}</p>
+				</Link>
 			</div>
 		</>
 	);

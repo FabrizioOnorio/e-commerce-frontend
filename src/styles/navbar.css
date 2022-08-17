@@ -28,19 +28,22 @@
 .navbar a {
 	color: rgb(255, 255, 255);
 	margin-right: 1rem;
+  align-items: center;
 }
 
 .navbar--basket {
 	font-size: xx-large;
+  display: flex;
 }
 
 .navbar--counter {
 	margin-right: 1rem;
 	background-color: rgb(210, 110, 75);
 	border-radius: 50%;
-	padding: 0.3rem 0.5rem;
-	font-size: smaller;
-	margin-left: -1.5rem;
+	font-size: 1rem;
+  padding: 0.1rem 0.4rem;
+  text-align: center;
+  margin-left: -0.7rem;
 }
 
 @media (max-width: 768px) {
